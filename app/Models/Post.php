@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     use HasFactory;
+    
+    public function getPaginateByLimit(int $limit_count = 10)
+    {
+        #日付順＝updated_at, 降順＝DESC. 日付降順に並べる
+        return $this->orderby('updated_at','DESC')->paginate($limit_count);
+    }
 }
