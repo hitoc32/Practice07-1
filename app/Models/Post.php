@@ -14,4 +14,9 @@ class Post extends Model
         #日付順＝updated_at, 降順＝DESC. 日付降順に並べる
         return $this->orderby('updated_at','DESC')->paginate($limit_count);
     }
+    
+    protected $fillable = [
+        'title',
+        'body'
+    ];
 }
