@@ -7,6 +7,7 @@
                 <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         </head>
         <body>
+                <h2>タイトル</h2>
                 <h1 class='title'>
                         {{ $post->title }}
                 </h1>
@@ -15,10 +16,13 @@
                                 <h3>本文</h3>
                                 <p class='body'>{{ $post->body }}</p>
                         </div>
-                        <div class='footer'>
-                            <!--ブログ投稿一覧画面に戻るためのリンクを用意する-->
-                            <a href="/">ブログ投稿一覧に戻る</a>
-                        </div>
+                </div>
+                <div class="edit">
+                        <a href="/posts/{{ $post->id }}/edit">edit</a>
+                </div>
+                <div class='footer'>
+                 <!--ブログ投稿一覧画面に戻るためのリンクを用意する-->
+                    <a href="/">ブログ投稿一覧に戻る</a>
                 </div>
         </body>
 </html>
