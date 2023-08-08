@@ -8,10 +8,9 @@
         </head>
         <body>
                 <h1>初めてのブログ作成</h1>
-                <a href='/posts/create'>新規作成</a>
-                <br>
+                <a href='/posts/create'>新規作成はこちらから</a>
                 <div class='posts'>
-                        <b>これまでのブログ一覧</b>
+                        <h2>これまでのブログ一覧</h2>
                         @foreach ($posts as $post)
                         <div class='post'>
                                 <a href="/posts/{{ $post->id }}"><h2 class='title'>{{ $post->title }}</h2></a>
