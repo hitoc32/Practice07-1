@@ -11,14 +11,19 @@ class Post extends Model
     use HasFactory;
     use SoftDeletes;
     
-    public function getPaginateByLimit(int $limit_count = 10)
+    public function getPaginateByLimit(int $limit_count = 5)
     {
         #日付順＝updated_at, 降順＝DESC. 日付降順に並べる
-        return $this->orderby('updated_at','DESC')->paginate($limit_count);
+        return $this::with('category')->orderBy('updated_at','DESC')->paginate($limit_count);
     }
     
     protected $fillable = [
         'title',
-        'body'
+        'body',
+        'category_id'
     ];
+    
+    public function category(){
+        return $this->belongsTo(Category::class);
+    }
 }
