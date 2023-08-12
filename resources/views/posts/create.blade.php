@@ -6,6 +6,10 @@
                 <!--Fonts -->
                 <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         </head>
+        <x-app-layout>
+                <x-slot name="header">
+                    新規作成    
+                </x-slot>
         <body>
             <h1>Blog Name</h1>
             <form action="/posts" method="POST">
@@ -36,4 +40,5 @@
                 <a href="/">ブログ投稿一覧に戻る</a>
             </div>
         </body>
+        </x-app-layout>
 </html>
