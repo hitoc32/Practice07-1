@@ -6,6 +6,10 @@
                 <!--Fonts -->
                 <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
         </head>
+        <x-app-layout>
+                <x-slot name="header">
+                    ブログの編集   
+                </x-slot>
         <body>
             <h1>編集画面</h1>
             <form action="/posts/{{ $post->id }}" method="POST">
@@ -28,4 +32,5 @@
                 <a href="/">ブログ投稿一覧に戻る</a>
             </div>
         </body>
+        </x-app-layout>
 </html>
